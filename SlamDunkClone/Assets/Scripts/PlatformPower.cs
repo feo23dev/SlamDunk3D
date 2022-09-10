@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlatformPower : MonoBehaviour
 {
-    [SerializeField] private float Angle;
-    [SerializeField] private float power;
+    [SerializeField] private float Angles;
+    [SerializeField] private float powers;
     
     private  void OnCollisionEnter(Collision other) 
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Angle,90,0) * power, ForceMode.Force);
-        
+        other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Angles,90,0) * powers, ForceMode.Force);
     }
 
 
