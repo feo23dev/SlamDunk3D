@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject enlarger;
     [SerializeField] private AudioSource[] Sounds;
     [SerializeField] private ParticleSystem[] Effects;
+    [SerializeField] private GameObject[] Panels;
     int BasketPoints; 
 
     void Start()
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
     {
         Sounds[1].Play();
         Debug.Log(" YOU LOST ");
+        Panels[1].SetActive(true);
     }
 
     public void EnlargeThePot(Vector3 Pos)
@@ -94,9 +96,14 @@ public class GameManager : MonoBehaviour
     }
     public void YouWon()
     {
-        Sounds[2].Play();   
+        Sounds[2].Play();  
+        Panels[0].SetActive(true); 
+        PlayerPrefs.SetInt("Level",PlayerPrefs.GetInt("Level")+1);
 
     }
+
+    
+    
 
 
 
